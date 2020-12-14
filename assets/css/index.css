@@ -1,0 +1,50 @@
+/* 设置字体图标 */
+.iconfont {
+  margin-right: 10px;
+}
+/* 设值icon图标的边距 */
+.app {
+  margin: 0 15px;
+}
+/* 设置文字的大小 */
+.fz a {
+  font-size: 13px;
+}
+/* 公共类文字居中 */
+.center {
+  text-align: center;
+}
+/* 文字的图片 */
+.textpic {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #009688;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  display: none;
+}
+/* 左侧导航区域头部盒子 */
+.userinfo {
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 12px;
+  user-select: none;
+  border-bottom: 1px solid #282b33;
+}
+/* 侧边欢迎语 */
+#welcome {
+  color: #fff !important;
+}
+/* 页面用来展示的区域 */
+.overflow {
+  overflow: hidden;
+  /* 消除下拉条 */
+}
+.content {
+  width: 100%;
+  height: 100%;
+}
