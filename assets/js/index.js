@@ -1,4 +1,5 @@
 getuser();
+let layer = layui.layer;
 function getuser() {
   $.ajax({
     url: "/my/userinfo",
@@ -14,19 +15,18 @@ function getuser() {
       if (res.data.user_pic) {
         //  layui-nav-img 为图片头像   textpic为文字头像
         //当res.data.user_pic存在时优先展示图片文件
+        $(".textAvatar").hide();
         $(".layui-nav-img").attr("src", res.data.user_pic).show();
-        $(".textpic").hide();
       } else {
         let ming = name[0].toUpperCase(); //获取name的首字母设置大写
         $(".layui-nav-img").hide();
-        $(".textpic").show().text(ming);
+        $(".textAvatar").text(ming).show();
       }
     },
   });
 }
 
 $(function () {
-  let layer = layui.layer;
   $(".quit").click(function (e) {
     e.preventDefault();
     layer.confirm("确认退出吗", { icon: 3 }, function (index) {

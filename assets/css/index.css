@@ -7,7 +7,7 @@
   margin: 0 15px;
 }
 /* 设置文字的大小 */
-.fz a {
+.text {
   font-size: 13px;
 }
 /* 公共类文字居中 */
@@ -15,26 +15,18 @@
   text-align: center;
 }
 /* 文字的图片 */
-.textpic {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.textAvatar {
+  width: 30px;
+  height: 30px;
   background-color: #009688;
-  color: #fff;
-  line-height: 40px;
+  border-radius: 50%;
   text-align: center;
+  line-height: 40px;
+}
+.textAvatar {
   display: none;
 }
-/* 左侧导航区域头部盒子 */
-.userinfo {
-  height: 60px;
-  text-align: center;
-  line-height: 60px;
-  font-size: 12px;
-  user-select: none;
-  border-bottom: 1px solid #282b33;
-}
+
 /* 侧边欢迎语 */
 #welcome {
   color: #fff !important;
@@ -47,4 +39,10 @@
 .content {
   width: 100%;
   height: 100%;
+}
+/* 左侧导航区域头部盒子 */
+.layui-side .userInfo {
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #000;
 }

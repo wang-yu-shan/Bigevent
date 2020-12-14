@@ -2,27 +2,28 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <title>大事件</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>76期大事件项目开发</title>
     <link rel="stylesheet" href="/assets/lib/layui/css/layui.css" />
     <link rel="stylesheet" href="/assets/fonts/iconfont.css" />
     <link rel="stylesheet" href="/assets/css/index.css" />
   </head>
+
   <body class="layui-layout-body">
     <div class="layui-layout layui-layout-admin">
-      <!-- 头部区域 -->
-      <div class="layui-header fz">
+      <div class="layui-header">
+        <!-- logo区域 -->
         <div class="layui-logo">
           <img src="/assets/images/logo.png" alt="" />
         </div>
+
+        <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-right">
           <li class="layui-nav-item">
-            <a href="javascript:;">
+            <!-- 头像和昵称区域 -->
+            <a href="javascript:;" class="userInfo">
               <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
-              <span class="text-avatar textpic"></span>
+              <span class="textAvatar"></span>
               个人中心
             </a>
             <dl class="layui-nav-child">
@@ -32,88 +33,74 @@
             </dl>
           </li>
           <li class="layui-nav-item quit">
-            <a href=""> <span class="iconfont icon-tuichu"></span>退出</a>
+            <a href=""><span class="iconfont icon-tuichu"></span>退出</a>
           </li>
         </ul>
       </div>
-      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-      <div class="layui-side layui-bg-black fz">
+
+      <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-          <div class="userinfo">
-            <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
-            <span class="text-avatar textpic"></span>
-            <span id="welcome"></span>
-          </div>
-          <ul
-            class="layui-nav layui-nav-tree"
-            lay-filter="test"
-            lay-shrink="all"
-          >
-            <!-- 首页 -->
+          <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+          <ul class="layui-nav layui-nav-tree" lay-filter="test" lay-shrink="all">
+            <!-- 头像和昵称区域 -->
+            <div class="userInfo">
+              <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
+              <span class="textAvatar"></span>
+              <span class="text" id="welcome"></span>
+            </div>
+
             <li class="layui-nav-item layui-this">
-              <a href="/home/dashboard.html" target="fm">
-                <span class="iconfont icon-home"></span>首页</a
-              >
+              <a href="/home/dashboard.html" target="layuiBody"><span class="iconfont icon-home"></span>首页</a>
             </li>
-            <!-- 文章管理 -->
             <li class="layui-nav-item">
-              <a class="" href="javascript:;">
-                <span class="iconfont icon-16"></span>文章管理</a
-              >
+              <a class="" href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
               <dl class="layui-nav-child">
                 <dd>
-                  <a href="javascript:;">
-                    <i class="layui-icon layui-icon-app app"></i>文章类别</a
-                  >
+                  <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章类别</a>
                 </dd>
                 <dd>
-                  <a href="javascript:;">
-                    <i class="layui-icon layui-icon-app app"></i>文章列表</a
-                  >
+                  <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章列表</a>
                 </dd>
                 <dd>
-                  <a href="javascript:;">
-                    <i class="layui-icon layui-icon-app app"></i>发布文章</a
-                  >
+                  <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>发表文章</a>
                 </dd>
               </dl>
             </li>
-            <!-- 个人中心 -->
             <li class="layui-nav-item">
-              <a href="javascript:;">
-                <span class="iconfont icon-user"></span>个人中心</a
-              >
+              <a href="javascript:;"><span class="iconfont icon-user"></span>个人中心</a>
               <dl class="layui-nav-child">
                 <dd>
-                  <a href="javascript:;">
-                    <i class="layui-icon layui-icon-app app"></i>基本资料</a
-                  >
+                  <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>基本资料</a>
                 </dd>
                 <dd>
-                  <a href="javascript:;">
-                    <i class="layui-icon layui-icon-app app"></i>更换头像</a
-                  >
+                  <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>更换头像</a>
                 </dd>
                 <dd>
-                  <a href="javascript:;">
-                    <i class="layui-icon layui-icon-app app"></i>重置密码</a
-                  >
+                  <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>重置密码</a>
                 </dd>
               </dl>
             </li>
           </ul>
         </div>
       </div>
-      <!-- 内容主体区域 -->
+
       <div class="layui-body overflow">
-        <iframe src="/home/dashboard.html" name="fm" class="content"></iframe>
+        <!-- 内容主体区域 -->
+        <!-- iframe 的src属性写上dashboard.html页面 ，表示默认窗口展示是图表页面 -->
+        <iframe width="100%" height="100%" name="layuiBody" src="/home/dashboard.html" frameborder="0"></iframe>
       </div>
-      <!-- 底部固定区域 -->
-      <div class="layui-footer center">© www.itheima.com - 黑马程序员</div>
+
+      <div class="layui-footer center">
+        <!-- 底部固定区域 -->
+        © www.itheima.com - 黑马程序员
+      </div>
     </div>
     <script src="/assets/lib/layui/layui.all.js"></script>
+    <!-- 引入jQ -->
     <script src="/assets/lib/jquery.js"></script>
-    <script src="/assets/js/ajaxconfig.js"></script>
+    <!-- 引入ajax的配置项 -->
+    <script src="/assets/js/ajaxConfig.js"></script>
+    <!-- 引入自己的js文件 -->
     <script src="/assets/js/index.js"></script>
   </body>
 </html>
