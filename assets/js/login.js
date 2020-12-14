@@ -21,9 +21,7 @@ $(function () {
     pass: [/^[\S]{6,12}$/, "密码必须6到12位，且不能出现空格"],
   });
   // 配置url地址
-  $.ajaxPrefilter(function (options) {
-    options.url = "http://ajax.frontend.itheima.net" + options.url;
-  });
+
   // 注册表单
   $(".registform").submit(function (e) {
     e.preventDefault();
@@ -37,6 +35,7 @@ $(function () {
         if (res.status !== 0) {
           return layer.msg(res.message);
         }
+
         layer.msg(
           "注册成功,即将跳往登录页面",
           {
@@ -62,6 +61,7 @@ $(function () {
         if (res.status !== 0) {
           return layer.msg(res.message);
         }
+        localStorage.setItem("data", res.token);
         layer.msg(
           "登录成功即将跳转页面",
           {
