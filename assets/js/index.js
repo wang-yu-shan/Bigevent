@@ -20,7 +20,6 @@ function getuser() {
     },
   });
 }
-
 $(function () {
   $(".quit").click(function (e) {
     e.preventDefault();
