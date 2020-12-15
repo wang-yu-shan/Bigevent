@@ -18,15 +18,22 @@ function getuser() {
         $(".textAvatar").text(ming).show();
       }
     },
+    complete: function (res) {
+      //status: 0, message: "获取用户基本信息成功！"
+      let str = res.responseJSON;
+      if (str.status !== 0 && str.message !== "获取用户基本信息成功") {
+        layer.msg("请前往登录");
+        location.href = "/home/login.html";
+      }
+    },
   });
 }
-
 $(function () {
-  $(".quit").click(function (e) {
-    e.preventDefault();
-    layer.confirm("确认退出吗", { icon: 3 }, function (index) {
+  $(".quit").click(function () {
+    layer.confirm("确认退出吗", { icon: 3, title: "提示" }, function (index) {
+      localStorage.removeItem("data");
       location.href = "/home/login.html";
+      layer.close(index);
     });
-    localStorage.removeItem("data");
   });
 });
