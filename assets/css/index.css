@@ -51,3 +51,6 @@
 iframe {
   background-color: rgb(242, 243, 245);
 }
+.layui-icon {
+  margin: 0 10px 15px;
+}
