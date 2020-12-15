@@ -3,11 +3,6 @@ let layer = layui.layer;
 function getuser() {
   $.ajax({
     url: "/my/userinfo",
-    headers: {
-      // 设置headers请求头信息
-      Authorization: localStorage.getItem("data"),
-    },
-    //
     success: function (res) {
       // 当nickname存在时优先展示，不存在时展示username
       let name = res.data.nickname || res.data.username;
@@ -32,5 +27,6 @@ $(function () {
     layer.confirm("确认退出吗", { icon: 3 }, function (index) {
       location.href = "/home/login.html";
     });
+    localStorage.removeItem("data");
   });
 });
